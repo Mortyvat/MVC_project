@@ -1,12 +1,8 @@
 <?php
 
-$url = explode("/", $_GET['url']);
-print_r($url);
-echo '<br>';
+// USe an autoloader
+require "libs/Bootstrap.php";
+require "libs/Controller.php";
+require "libs/View.php";
 
-require "controllers/" . $url[0]. ".php";
-$controller = new $url[0];
-
-if(isset($url[1])){
-    $controller->{$url[1]}();
-}
+$app = new Bootstrap();
